@@ -74,7 +74,7 @@ const Page = () => {
   }
 
   useEffect(() => {
-    const ws = new WebSocket("ws://localhost:8080/");
+    const ws = new WebSocket(process.env.NEXT_PUBLIC_WEBSOCKET_URL ?? 'wss://chess-ws.onrender.com/');
     setWs(ws);
 
     ws.onopen = () => {
